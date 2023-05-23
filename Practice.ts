@@ -15,16 +15,24 @@ mountains.push(m2);
 let m3 : Mountain =  {name: "Denali", height: 20310};
 mountains.push(m3);
 
-// function findNameOfTallestMountain(ms : Mountain[]) : string {
-//     for(let i = 0; i < ms.length; i++){
-        
-//     }
+function findNameOfTallestMountain(ms : Mountain[]) : string {
     
+    let index : number = -1;
+    let tallestHeight : number = 0;
+    for(let i = 0; i < ms.length; i++){
+        let m: Mountain = ms[i];
+
+        if(m.height > tallestHeight){
+            index = i;
+            tallestHeight = m.height;
+        }
+    }
     
-    
-    
-//     return "";
-// }
+    return ms[index].name;
+}
+
+let tallest: string = findNameOfTallestMountain(mountains);
+console.log(tallest);
     
 // Products
 interface Product{

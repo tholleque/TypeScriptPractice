@@ -5,6 +5,20 @@ var m2 = { name: "Everest", height: 29029 };
 mountains.push(m2);
 var m3 = { name: "Denali", height: 20310 };
 mountains.push(m3);
+function findNameOfTallestMountain(ms) {
+    var index = -1;
+    var tallestHeight = 0;
+    for (var i = 0; i < ms.length; i++) {
+        var m = ms[i];
+        if (m.height > tallestHeight) {
+            index = i;
+            tallestHeight = m.height;
+        }
+    }
+    return ms[index].name;
+}
+var tallest = findNameOfTallestMountain(mountains);
+console.log(tallest);
 var products = [];
 var p1 = { name: "laptop", price: 700 };
 products.push(p1);
